@@ -4,6 +4,7 @@
 # Escreva um programa que verifique esses campos e imprima "Dados válidos" se ambos
 # forem positivos ou "Dados inválidos" caso contrário.
 
+
 preco = 20000
 quantidade = 10
 
@@ -184,8 +185,19 @@ while True:
     dados.append(entrada)
 print(f"Dados digitados: {dados}")
 
+
 ### Exercício 12. Validação de Entrada
 # Solicitar ao usuário um número dentro de um intervalo específico até que a entrada seja válida.
+intervalo = range(1, 11)
+
+while True:
+    numero = int(input("Digite um número entre 1 a 10: "))
+
+    if numero in intervalo:
+        print("Numero valido")
+        break
+    else:
+        print("Numero invalido, tente novamente")
 
 ### Exercício 13. Consumo de API Simulado
 # Simular o consumo de uma API paginada, onde cada "página" de dados é processada em loop até que não haja mais páginas.
