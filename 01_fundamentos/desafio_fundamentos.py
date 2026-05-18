@@ -1,31 +1,57 @@
-CONSTANTE_BONUS = 1000
+# Integre na solução anterior um fluxo de While
+# que repita o fluxo até que o usuário insira as
+# informações corretas
 
-# 1. Solicita ao usuário que digite seu nome
-nome = input("Digite o seu nome: ")
-
-# 2. Solicita ao usuário que digite o valor do seu salário
-# Converte a entrada para um numéro de ponto flutuante
-salario = float(input("Por favor, informe o seu salário: "))
-
-# 3. Solicite ao usuário que digite o valor do bônus recebido
-# Converte a entrada para um número de ponto flutuante
-bonus = float(input("Por favor, informe o valor do bônus recebido: "))
-
-# 4. Calcule o valor do bônus final
-kpi = CONSTANTE_BONUS + salario * bonus
-
-# 6. Imprime a mensagem personalizada incluindo o nome do usuário, salário e o bônus
-print(f"Olá {nome}, o valor do bônus a ser recebido é: {kpi}, Parabéns!")
+# Solicita ao usuário que digite seu nome
+nome_valido = False
+salario_valido = False
+bonus_valido = False
 
 
-# Bônus: Quantos bugs e riscos você consegue identificar nesse programa?
-"""
-    Riscos:
-    - Não existe uma validação de dados inseridos pelo usuário.
-    - Não tem uma regra de negócio para saber se o bônus está correto, ou 
-    se deveria receber.
-    
-    Bugs:
-    - O cálculo do bônus não está convertendo para porcentagem. O resultado
-    está superestimado.
-"""
+def validar_nome_salario_bonus(
+    nome: str, salario: float, bonus: float
+) -> tuple[str, float, float]:
+
+    # 1. Validação do nome
+    nome_valido = False
+    while not nome_valido:
+        try:
+            nome = input("Digite seu nome: ")
+
+            # Verifica se o nome está vazio
+            if len(nome) == 0:
+                raise ValueError("O nome não pode estar vazio.")
+            # Verifica se há números no nome
+            elif any(char.isdigit() for char in nome):
+                raise ValueError("O nome não deve conter números.")
+            else:
+                print("Nome válido:", nome)
+                nome_valido = True
+        except ValueError as e:
+            print(e)
+
+    # 2. Validação do salário
+    while True:
+        try:
+            salario = float(input("Digite o valor do seu salário: "))
+            if salario < 0:
+                print("Por favor, digite um valor positivo para o salário.")
+        except ValueError:
+            print("Entrada inválida para o salário. Por favor, digite um número.")
+            exit()
+
+    # 3. Validação do bônus
+    while True:
+        try:
+            bonus = float(input("Digite o valor do bônus recebido: "))
+            if bonus < 0:
+                print("Por favor, digite um valor positivo para o bônus.")
+        except ValueError:
+            print("Entrada inválida para o bônus. Por favor, digite um número.")
+            exit()
+
+    # 4. Calculo do KPI
+    bonus_recebido = 1000 + salario * bonus  # Exemplo simples de KPI
+
+    # 5. Retornando os três valores
+    return nome, salario, bonus_recebido
