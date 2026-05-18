@@ -226,5 +226,15 @@ while tentativa <= tentativa_maxima:
 else:
     print("Conexão mal sucedida")
 
+
 ### Exercício 15. Processamento de Dados com Condição de Parada
 # Processar itens de uma lista até encontrar um valor específico que indica a parada.
+itens = [1, 2, 3, 4, "parar", 5, 6, 7]
+i = 0
+
+while i < len(itens):
+    if itens[i] == "parar":
+        break
+    print(f"Processamento item: {itens[i]}")
+    i += 1
+print("Fim do processamento")
