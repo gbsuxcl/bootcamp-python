@@ -3,6 +3,7 @@
 # que todos os registros tenham valores positivos para `quantidade` e `preço`.
 # Escreva um programa que verifique esses campos e imprima "Dados válidos" se ambos
 # forem positivos ou "Dados inválidos" caso contrário.
+
 preco = 20000
 quantidade = 10
 
@@ -77,3 +78,22 @@ if transacao["valor"] > 10000 or transacao["hora"] < 9 or transacao["hora"] > 18
     print("Transação suspeita")
 else:
     print("Transação normal")
+
+
+### Exercício 6. Contagem de Palavras em Textos
+# Objetivo:** Dado um texto, contar quantas vezes cada palavra única aparece nele.
+
+texto = "O rato roeu a roupa do rei de Roma. Em Roma o roupa do rei o rato roeu."
+texto_corrigido = texto.replace(".", "").lower()
+palavras = texto_corrigido.split()
+
+contagem_palavras = {}
+
+for palavra in palavras:
+    if palavra in contagem_palavras:
+        contagem_palavras[palavra] += 1
+    else:
+        contagem_palavras[palavra] = 1
+print(contagem_palavras)
+
+###
