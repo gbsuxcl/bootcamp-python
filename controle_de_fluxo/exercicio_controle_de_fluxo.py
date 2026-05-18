@@ -199,8 +199,16 @@ while True:
     else:
         print("Numero invalido, tente novamente")
 
+
 ### Exercício 13. Consumo de API Simulado
 # Simular o consumo de uma API paginada, onde cada "página" de dados é processada em loop até que não haja mais páginas.
+pagina_atual = 1
+pagina_final = 5
+
+while pagina_atual <= pagina_final:
+    print(f"Acessando página {pagina_atual}")
+    pagina_atual += 1
+print("Todas as páginas foram processadas")
 
 ### Exercício 14. Tentativas de Conexão
 # Simular tentativas de reconexão a um serviço com um limite máximo de tentativas.
