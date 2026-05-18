@@ -173,6 +173,16 @@ print(total_categorias)
 
 ### Exercício 11. Leitura de Dados até Flag
 # Ler dados de entrada até que uma palavra-chave específica ("sair") seja fornecida.
+dados = []
+
+while True:
+    entrada = input("Digite os dados que deseja processar [sair para finalizar]: ")
+
+    if entrada.lower() == "sair":
+        break
+
+    dados.append(entrada)
+print(f"Dados digitados: {dados}")
 
 ### Exercício 12. Validação de Entrada
 # Solicitar ao usuário um número dentro de um intervalo específico até que a entrada seja válida.
