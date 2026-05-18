@@ -53,20 +53,27 @@ if log["level"] == "ERROR":
 # você precisa garantir que cada usuário tenha idade entre 18 e 65 anos e tenha
 # fornecido um email válido. Escreva um programa que valide essas condições
 # e imprima "Dados de usuário válidos" ou o erro específico encontrado.
-idade = 20
+
+idade = 5
 email = "user@example.com"
 
-while idade != True or email != True:
-    try:
+if not 18 <= idade <= 65:
+    print("Idade invalida. Insira a idade novamente")
+elif "@" not in email or "." not in email:
+    print("Email invalido. Insira o email novamente")
+else:
+    print("Dados de usuario validos")
 
-        if not 18 <= idade <= 65:
-            idade == False
-            print("Idade invalida. Insira a idade novamente")
-        elif "@" not in email or "." not in email:
-            email == False
-            print("Email invalido. Insira o email novamente")
-        else:
-            idade == True and email == True
-            print("Dados de usuario validos")
-    except TypeError as e:
-        print(f"{e}")
+
+### Exercício 5: Detecção de Anomalias em Dados de Transações
+# Você está trabalhando em um sistema de detecção de fraude e precisa identificar
+# transações suspeitas. Uma transação é considerada suspeita se o valor for superior
+# a R$ 10.000 ou se ocorrer fora do horário comercial (antes das 9h ou depois das 18h).
+# Dada uma transação como `transacao = {'valor': 12000, 'hora': 20}`, verifique se ela é suspeita.
+
+transacao = {"valor": 12000, "hora": 20}
+
+if transacao["valor"] > 10000 or transacao["hora"] < 9 or transacao["hora"] > 18:
+    print("Transação suspeita")
+else:
+    print("Transação normal")
