@@ -210,8 +210,21 @@ while pagina_atual <= pagina_final:
     pagina_atual += 1
 print("Todas as páginas foram processadas")
 
+
 ### Exercício 14. Tentativas de Conexão
 # Simular tentativas de reconexão a um serviço com um limite máximo de tentativas.
+tentativa_maxima = 5
+tentativa = 1
+
+while tentativa <= tentativa_maxima:
+    print(f"Você pode tentatar mais {tentativa_maxima - tentativa}")
+
+    if True:
+        print("Conexão bem sucedida")
+        break
+    tentativa += 1
+else:
+    print("Conexão mal sucedida")
 
 ### Exercício 15. Processamento de Dados com Condição de Parada
 # Processar itens de uma lista até encontrar um valor específico que indica a parada.
