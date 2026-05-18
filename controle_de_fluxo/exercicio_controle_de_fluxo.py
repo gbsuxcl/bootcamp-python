@@ -116,3 +116,21 @@ for numero in dados:
 # 07. Mostrar o resultado final
 print(f"Dados origniais: {dados}")
 print(f"Dads normalizado: {dados_normalizados}")
+
+
+### Exercício 8. Filtragem de Dados Faltantes
+# Objetivo:** Dada uma lista de dicionários representando dados de usuários, filtrar aqueles que têm um campo específico faltando
+
+usuarios = [
+    {"nome": "Alice", "email": "alice@example.com"},
+    {"nome": "Bob", "email": ""},
+    {"nome": "Carol", "email": "carol@example.com"},
+]
+
+usuarios_validos = []
+
+for usuario in usuarios:
+    if usuario["email"]:
+        usuarios_validos.append(usuario)
+
+print(f"Usuários válidos: {usuarios_validos}")
