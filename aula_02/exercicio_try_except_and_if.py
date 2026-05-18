@@ -1,5 +1,5 @@
 # #### try-except e if
-
+"""
 # 21: Conversor de Temperatura
 try:
     celsius = float(input("Digite a temperatura em graus Celsius: "))
@@ -31,8 +31,29 @@ if frase == frase[::-1]:
     print("A frase é um políndromo")
 else:
     print("A frase não é um políndromo")
-
+"""
 
 # 23: Calculadora Simples
+num1 = float(input("Informe um número: "))
+operador = input("Informe o operador (+, -, /...): ")
+num2 = float(input("Informe outro número: "))
+
+if operador == "+":
+    print(f"Resultado: {num1 + num2}")
+elif operador == "-":
+    print(f"Resultado: {num1 - num2}")
+elif operador == "*":
+    print(f"Resultado: {num1 * num2}")
+elif operador == "/":
+    print(f"Resultado: {num1 / num2}")
+elif operador == "**":
+    print(f"Resultado: {num1 ** num2}")
+elif operador == "%":
+    print(f"Resultado: {num1 % num2}")
+elif operador == "//":
+    print(f"Resultado: {num1 // num2}")
+else:
+    print("Operador inválido")
+
 # 24: Classificador de Números
 # 25: Conversão de Tipo com Validação
