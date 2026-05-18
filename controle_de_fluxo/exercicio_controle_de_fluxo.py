@@ -96,4 +96,23 @@ for palavra in palavras:
         contagem_palavras[palavra] = 1
 print(contagem_palavras)
 
-###
+
+### Exercício 7. Normalização de Dados
+# Objetivo:** Normalizar uma lista de números para que fiquem na escala de 0 a 1.
+
+# 01. Lista
+dados = [15, 25, 50, 75, 100]
+# 02. Descobrir os valores menores e maiores
+valor_min = min(dados)
+valor_max = max(dados)
+# 03. Criar uma lista vazia
+dados_normalizados = []
+# 04. Usar um FOR para percorrer cada número da lista
+for numero in dados:
+    # 05. Aplicar a fórmula de normalização: (x - min) / (max - min)
+    valor_normalizado = (numero - valor_min) / (valor_max - valor_min)
+    # 06. Adicionar o resultado na lista de dados normalizado
+    dados_normalizados.append(valor_normalizado)
+# 07. Mostrar o resultado final
+print(f"Dados origniais: {dados}")
+print(f"Dads normalizado: {dados_normalizados}")
