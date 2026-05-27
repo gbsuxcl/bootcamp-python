@@ -1,8 +1,4 @@
 import csv
-from pathlib import Path
-
-BASE_DIR = Path(__file__).parent
-path_arquivo = BASE_DIR / "venda.csv"
 
 def ler_csv(nome_arquivo_csv: str) -> list[dict]:
     """
@@ -38,10 +34,3 @@ def somar_valores_dos_produtos(filtrar_produtos_entregues: list[dict]) -> int:
     for produto in filtrar_produtos_entregues:
         valor_total += int(produto.get("price"))
     return valor_total
-
-
-
-csv_lido = ler_csv(path_arquivo)
-produtos_entregues = filtrar_produtos_entregues(csv_lido)
-valor_dos_produtos_entregues = somar_valores_dos_produtos(produtos_entregues)
-print(valor_dos_produtos_entregues)
