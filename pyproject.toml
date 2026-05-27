@@ -1,0 +1,19 @@
+[project]
+name = "bootcamp-python"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Gabrielle",email = "gabrielle.urcioli@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandera (>=0.31.1,<0.32.0)",
+    "pandas (>=3.0.3,<4.0.0)",
+    "fastparquet (>=2026.5.0,<2027.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
