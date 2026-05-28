@@ -2,7 +2,10 @@ from pathlib import Path
 import pandas as pd
 import os
 import glob
+from log import time_measure_decorator
 
+
+@time_measure_decorator
 # Uma função de Extract que Lê e Consolida os JSONs
 def extrair_e_concatenar(pasta: str) -> pd.DataFrame:
     """
@@ -19,13 +22,13 @@ def extrair_e_concatenar(pasta: str) -> pd.DataFrame:
     df_total = pd.concat(df_list, ignore_index=True)
     return df_total
 
-
+@time_measure_decorator
 # Uma função  de Transformação
 def calcular_kpi_total_de_vendas(df: pd.DataFrame) -> pd.DataFrame:
     df["Total"] = df["Quantidade"] * df["Venda"]
     return df
 
-
+@time_measure_decorator
 # Uma função de Carregamento/Load em CSV ou Parquet
 def carregar_dados(df: pd.DataFrame, formato_saida: list):
 
